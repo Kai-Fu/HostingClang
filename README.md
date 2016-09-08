@@ -11,4 +11,5 @@ Python and Lua are natively supporting being embedded since they are open source
 Recently C# becomes popular for embedded game play language because of Unity3D. You probably know Unity3D is built on the top of Mono as the cross-platform JIT engine of C# language.
 
 Now what about C++? 
-With Clang and LLVM infrastructure, not only does it become possible, but brings you the rich assets in C++ code as well the exciting performance advantages over those script languages.
+
+With Clang and LLVM infrastructure, , not only does it become possible, but brings you the rich assets in C++ code as well the exciting performance advantages over those script languages.
