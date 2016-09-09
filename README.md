@@ -11,7 +11,7 @@ Python and Lua are natively supporting being embedded since they are open source
 Recently C# becomes popular for embedded game play language because of Unity3D. You probably know Unity3D is built on the top of Mono as the cross-platform JIT engine of C# language.
 
 Now what about C++? 
-<<<<<<< HEAD
+
 With Clang and LLVM infrastructure, not only does it become possible, but brings you the rich assets in C++ code as well the exciting performance advantages over those script languages.
 
 I know there are many people who did the simliar things in various alternative methods. This project is meant to make it KISS(keep it simple and stupid).
@@ -19,7 +19,7 @@ I know there are many people who did the simliar things in various alternative m
 Before the born of LLVM, I experienced using Tiny C Compiler(http://bellard.org/tcc/) and hijacking GNU compiler source code to achieve JIT-ing C/C++ source code, but it was not happy experience because of either lacking of x64 support or messup in understanding the code.
 
 I also tried using compiler as the external tools to generate DLL/SO files and dynamically load them. But barely does it look attractive since I cannot participate any processes in the compilation and linking process, which means no reflections of data types and no linking to customized symbols.
-=======
 
-With Clang and LLVM infrastructure, , not only does it become possible, but brings you the rich assets in C++ code as well the exciting performance advantages over those script languages.
->>>>>>> origin/master
+
+
+
