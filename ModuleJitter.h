@@ -30,6 +30,7 @@ public:
 
 	bool IsOk() const;
 	void* GetFunctionPtr(const char* funcName);
-
+	llvm::ExecutionEngine* GetEE();
+	llvm::Module* GetModule();
 };
 

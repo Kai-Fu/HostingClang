@@ -20,6 +20,14 @@ extern "C" {
 	float3 MyTestFunc(const float3& a, const float3& b);
 	void testExtFunc(float3& ref);
 }
+class TestClass
+{
+public:
+	TestClass();
+	~TestClass();
+
+	void Foo(float val);
+};
 
 
 
@@ -28,7 +36,11 @@ float3 MyTestFunc(const float3& a, const float3& b)
 	// During JIT the CRT function can be resolved by looking up in the exported symbol of hosting side.
 	float sinVal = sinf(a.x);
 	printf("Printout from hosted C++ : %f\n", sinVal);
+
 	float3 val(a);
 	testExtFunc(val);
+
+	TestClass myVal;
+	myVal.Foo(val.z);
     return a + b;
 }

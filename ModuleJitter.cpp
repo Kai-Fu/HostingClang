@@ -149,3 +149,13 @@ void* ModuleJitter::GetFunctionPtr(const char * funcName)
 {
 	return (void*)mEE->getFunctionAddress(funcName);;
 }
+
+llvm::ExecutionEngine* ModuleJitter::GetEE()
+{
+	return mEE.get();
+}
+
+llvm::Module * ModuleJitter::GetModule()
+{
+	return mModule;
+}

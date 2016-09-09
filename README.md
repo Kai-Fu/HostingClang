@@ -20,6 +20,8 @@ Before the born of LLVM, I experienced using Tiny C Compiler(http://bellard.org/
 
 I also tried using compiler as the external tools to generate DLL/SO files and dynamically load them. But barely does it look attractive since I cannot participate any processes in the compilation and linking process, which means no reflections of data types and no linking to customized symbols.
 
+To compile this project, you need set system variable "LLVM_SDK"  the LLVM installation path.
+
 
 
 

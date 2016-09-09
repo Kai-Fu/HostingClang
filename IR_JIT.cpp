@@ -23,6 +23,19 @@ extern "C" {
 	}
 }
 
+//
+// Actually Clang does have the same name mangling as MSVC, so used the exported class member functions just as it is.
+//
+class TestClass
+{
+public:
+	__declspec(dllexport) TestClass() { std::cout << "Printout from TestClass::constuctor" << std::endl; }
+	__declspec(dllexport) ~TestClass() { std::cout << "Printout from TestClass::desstuctor" << std::endl; }
+
+	__declspec(dllexport) void Foo(float val) { std::cout << "Printout from TestClass::Foo : " << val << std::endl; }
+};
+
+
 static void _On_LLVM_Fatal_Error(void* pData, const std::string& reason, bool gen_crash_diag)
 {
 	std::cout << reason << std::endl;
@@ -52,6 +65,21 @@ int main()
 		auto c = pFN(a, b);
 
 		printf("Printout from hosting C++ : %f\n", c.y);
+
+		//
+		// Here shows how to get the reflection from hosted C++ code by listing all structure types and dump their debug info.
+		//
+		auto pModule = module.GetModule();
+		auto structList = pModule->getIdentifiedStructTypes();
+		for (auto& st : structList) {
+			std::cout << "=========================================================" << std::endl;
+			std::cout << "Struct name : " << st->getStructName().data() << std::endl;
+			auto elemList = st->elements();
+			for (auto& elem : elemList) {
+				elem->dump();
+			}
+		}
+
 
 	}
 	llvm::llvm_shutdown();

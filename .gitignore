@@ -17,6 +17,16 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
+# Visual Studio files and folders
+x64
+ipch
+Debug
+.vs
+*.sln
+*.opendb
+*.user
+*.db
+
 # =========================
 # Operating System Files
 # =========================
