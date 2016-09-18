@@ -95,7 +95,7 @@ std::unique_ptr<llvm::Module> ModuleJitter::CompileFromCxxFile(const char * file
 	// The command line to compile C++ source file to IR byte code should like:
 	//    clang -S -emit-llvm test.cpp -o test.ll
 	// Note here -S is needed since I cannot perform any linking time operation during generating LLVM IR code.
-	argsStream << "-S -emit-llvm ";
+	argsStream << "-S -emit-llvm -O3 ";
 	argsStream << fileName << " ";
 	argsStream << "-o \"";
 	argsStream << irFile << "\"";
